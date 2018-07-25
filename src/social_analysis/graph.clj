@@ -56,3 +56,21 @@
   (let [pair-edges (fn [[v neighbors]]
     (map #(vector v %) neighbors))]
     (mapcat pair-edges (:neighbors graph))))
+
+(defn bf-seq
+  "sets lazy sequence for checking vertecies"
+  ([get-neighbors a]
+    (bf-seq
+      get-neighbors
+      (conj clojure.lang.PersistentQueue/EMPTY [a])
+      #{a}))
+    ([get-neighbors q seen])
+      (lazy-seq
+        (when-not (empty? q)
+        (let [current (first q)
+        nbors (remove seen (get-neighbors (last current)))]
+          (cons current
+            (bf-seq get-neighbors
+              (into (pop q)
+                (map #(conj current %) nbors))
+              (into seen nbors)))))))
