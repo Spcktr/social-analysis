@@ -1,10 +1,10 @@
 # social-analysis
 
-FIXME: description
+Scans facebook friend list data and checks six degree of friendship with all of the original user's friends. This is based off the six degrees of Kevin Bacon effect.
 
 ## Installation
 
-Download from http://example.com/FIXME.
+
 
 ## Usage
 
@@ -30,7 +30,7 @@ FIXME: listing of options this app accepts.
 
 ## License
 
-Copyright © 2018 FIXME
+Copyright © 2018 Spctkr
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
