@@ -26,7 +26,7 @@
   "removes fringe users from vector"
   ([g x y](delete g x y false))
   ([g x y bidirectional?]
-    ((if bidirectional? #(delete % y x false) indentity)
+    ((if bidirectional? #(delete % y x false) identity)
     (update-in g [:neighbors x] #( disj % y)))))
 
 (defn merge-graphs
