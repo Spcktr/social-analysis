@@ -1,4 +1,4 @@
-# social-analysis
+# Social Analysis
 
 Scans facebook friend list data and checks six degree of friendship with all of the original user's friends. This is based off the six degrees of Kevin Bacon effect.
 
