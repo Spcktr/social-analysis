@@ -2,8 +2,7 @@
   (:require [clojure.set :as set]
             [clojure.core.reducers :as r]
             [clojure.data.json :as json]
-            [clojure.java.io :as io]
-            [social_analysis.util :as u]))
+            [clojure.java.io :as io]))
 
 
 (defrecord Graph
