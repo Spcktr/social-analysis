@@ -74,3 +74,6 @@
               (into (pop q)
                 (map #(conj current %) nbors))
               (into seen nbors)))))))
+(defn breadth-first
+  [graph a]
+  (bf-seq (:neighbors graph) a))
