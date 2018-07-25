@@ -34,3 +34,25 @@
   [a b]
   (Graph. (merge-with set/union (:neighbors a) (:neighbors b))
           (merge (:data a) (:data b))))
+
+(defn get-value
+  "getting vertex number for hashmap"
+  ([g x] ((:data g) x))
+  ([g x k] ((get-value g x) k)))
+
+(defn set-value
+  "setting vertex number"
+  ([g x v] (assoc-in g [:data x] v))
+  ([g x k v] (set-value g x (assoc (get-value g x) k v))))
+
+(defn get-vertices
+  "gets neighbors and check bidirectional relationship a -> b"
+  [graph]
+  (reduce set/union (set (keys (:neighbors graph)))
+  (cals (:neighbors graph))))
+
+(defn get-edges
+  [graph]
+  (let [pair-edges (fn [[v neighbors]]
+    (map #(vector v %) neighbors))]
+    (mapcat pair-edges (:neighbors graph))))
