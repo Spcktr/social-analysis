@@ -77,3 +77,8 @@
 (defn breadth-first
   [graph a]
   (bf-seq (:neighbors graph) a))
+
+(defn bfs
+  "breath first search for functionalities(filters)"
+  [graph a b]
+  (frist (filter #(= (last %) b) (breadth-first graph a))))
