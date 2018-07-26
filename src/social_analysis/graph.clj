@@ -48,7 +48,7 @@
   "gets neighbors and check bidirectional relationship a -> b"
   [graph]
   (reduce set/union (set (keys (:neighbors graph)))
-  (cals (:neighbors graph))))
+  (vals (:neighbors graph))))
 
 (defn get-edges
   [graph]
